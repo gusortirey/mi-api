@@ -67,7 +67,13 @@ app.delete('/usuarios/:id', (req, res) => {
   res.json({ message: `Usuario con ID ${userId} eliminado` });
 });
 
-// Iniciamos el servidor
+app.get('/productos', (req, res) => {
+  res.json([
+    { id: 1, nombre: 'Laptop', precio: 15000 },
+    { id: 2, nombre: 'Mouse', precio: 350 }
+  ]);
+});
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
